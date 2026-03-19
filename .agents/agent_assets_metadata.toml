@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "fLwKDf_mrI6ybqb5jo3lg"
+uri = "file://HabiTracker-android.tar.gz"
+type = "unspecified"
+title = "HabiTracker - Projeto Android"

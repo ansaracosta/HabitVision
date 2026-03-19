@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Dark mode CSS variables override */
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 11%;
+    --card-foreground: 213 31% 91%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 213 31% 91%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 16%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 223 47% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 47% 16%;
+    --accent-foreground: 213 31% 91%;
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 174 72% 38%;
+  }
+}
+
+/* Dark mode overrides for hardcoded Tailwind color classes */
+@layer utilities {
+  .dark .bg-white {
+    background-color: hsl(222, 47%, 11%);
+  }
+  .dark .bg-gray-50 {
+    background-color: hsl(222, 47%, 9%);
+  }
+  .dark .bg-gray-100 {
+    background-color: hsl(220, 30%, 16%);
+  }
+  .dark .bg-gray-200 {
+    background-color: hsl(216, 30%, 20%);
+  }
+  .dark .text-gray-900 {
+    color: hsl(213, 31%, 91%);
+  }
+  .dark .text-gray-800 {
+    color: hsl(213, 25%, 82%);
+  }
+  .dark .text-gray-700 {
+    color: hsl(213, 20%, 75%);
+  }
+  .dark .text-gray-600 {
+    color: hsl(215, 16%, 65%);
+  }
+  .dark .text-gray-500 {
+    color: hsl(215, 14%, 55%);
+  }
+  .dark .text-gray-400 {
+    color: hsl(215, 12%, 45%);
+  }
+  .dark .border-gray-100 {
+    border-color: hsl(216, 34%, 17%);
+  }
+  .dark .border-gray-200 {
+    border-color: hsl(216, 30%, 20%);
+  }
+  .dark .border-b {
+    border-bottom-color: hsl(216, 34%, 17%);
+  }
+  .dark .shadow,
+  .dark .shadow-sm,
+  .dark .shadow-md,
+  .dark .shadow-lg {
+    --tw-shadow-color: rgba(0, 0, 0, 0.5);
+    --tw-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), 0 1px 3px var(--tw-shadow-color), 0 1px 2px var(--tw-shadow-color);
+  }
+  .dark .divide-gray-100 > * + * {
+    border-color: hsl(216, 34%, 17%);
+  }
+
+  /* Hover overrides in dark mode */
+  .dark .hover\:bg-gray-50:hover {
+    background-color: hsl(222, 47%, 14%);
+  }
+  .dark .hover\:bg-gray-100:hover {
+    background-color: hsl(220, 30%, 18%);
+  }
+  .dark .hover\:text-gray-700:hover {
+    color: hsl(213, 25%, 80%);
+  }
+}
+
+/* Font size scale */
+html {
+  font-size: calc(16px * var(--font-scale, 1));
+}

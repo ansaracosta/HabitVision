@@ -71,3 +71,7 @@ app.use((req, res, next) => {
     log(`serving on port ${port}`);
   });
 })();
+
+export default function handler(req: Request, res: Response) {
+  app(req, res);
+}

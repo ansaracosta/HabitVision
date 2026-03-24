@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx server/index.ts",
-    "build:client": "cd client && npm install && npm run build",
-    "build": "npm run build:client && cp -r client/dist server/public",
+    "build:client": "rm -rf server/public && mkdir -p server/public && cp -r client/* server/public",
+    "build": "npm run build:client"
     "start": "tsx server/index.ts",
     "check": "tsc",
     "db:push": "drizzle-kit push"
